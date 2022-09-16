@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrolling Parallax Effect</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">Rifki.</a>
+    <ul>
+      <li><a href="" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#">Work</a></li>
+      <li><a href="#">Contacts</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <img src="img/stars.png" id="stars">
+    <img src="img/moon.png" id="moon">
+    <img src="img/mountains_behind.png" id="mountains_behind">
+    <h2 id="text">Moon Light</h2>
+    <a href="" id="btn">Explore</a>
+    <img src="img/mountains_front.png" id="mountains_front">
+  </main>
+
+  <section class="contents" id="about">
+    <h2>Parallax Scrolling Effect</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat soluta voluptatibus ipsa, vel voluptatum molestias reiciendis harum itaque perferendis eum ea deleniti earum animi aspernatur dicta ipsam omnis dolorem voluptates!. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores nulla nam quos cupiditate optio voluptas repellat aspernatur debitis ad, ea, quidem rerum, vitae numquam! Est beatae maxime esse reprehenderit nam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti provident quasi enim accusantium doloremque excepturi culpa nulla aut reprehenderit, id saepe voluptatibus dolor, ipsum consectetur sit dolorum amet nesciunt omnis.</p>
+    <br><br>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat soluta voluptatibus ipsa, vel voluptatum molestias reiciendis harum itaque perferendis eum ea deleniti earum animi aspernatur dicta ipsam omnis dolorem voluptates!. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores nulla nam quos cupiditate optio voluptas repellat aspernatur debitis ad, ea, quidem rerum, vitae numquam! Est beatae maxime esse reprehenderit nam.</p>
+    <br><br>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat soluta voluptatibus ipsa, vel voluptatum molestias reiciendis harum itaque perferendis eum ea deleniti earum animi aspernatur dicta ipsam omnis dolorem voluptates!. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores nulla nam quos cupiditate optio voluptas repellat aspernatur debitis ad, ea, quidem rerum, vitae numquam! Est beatae maxime esse reprehenderit nam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti provident quasi enim accusantium doloremque excepturi culpa nulla aut reprehenderit, id saepe voluptatibus dolor, ipsum consectetur sit dolorum amet nesciunt omnis.</p>
+    
+  </section>
+  
+  <script>
+    let stars = document.getElementById('stars')
+    let moon = document.getElementById('moon')
+    let mountains_behind= document.getElementById('mountains_behind')
+    let mountains_front = document.getElementById('mountains_front')
+    let text = document.getElementById('text')
+    let btn = document.getElementById('btn')
+    let header = document.querySelector('header')
+
+    window.addEventListener('scroll', function () {
+      let value = window.scrollY
+      stars.style.left = value * 0.25 + 'px'
+      moon.style.top = value * 1.05 + 'px'
+      mountains_behind.style.top = value * 0.25 + 'px'
+      mountains_front.style.top = value * 0 + 'px'
+      text.style.marginRight = value * 4 + 'px'
+      text.style.marginTop = value * 1.5 + 'px'
+      btn.style.marginTop = value * 1.5 + 'px'
+      header.style.top = value * 0.5 + 'px'
+    })
+  </script>
+</body>
+</html>
